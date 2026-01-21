@@ -1,0 +1,31 @@
+{
+  "vpc_1_cider": "10.0.0.0/24",
+  "pub_sub_cider": "10.0.0.0/25",
+  "pri_sub_cider": "10.0.0.128/25",
+  "environment": "prod",
+  "instance_type": "t2.micro",
+  "instance_count": 1,
+  "ingress_rules": [
+    {
+      "from_port": 443,
+      "to_port": 443,
+      "protocol": "tcp",
+      "cidr_blocks": [
+        "0.0.0.0/0"
+      ],
+      "description": "HTTPS for production"
+    },
+    {
+      "from_port": 22,
+      "to_port": 22,
+      "protocol": "tcp",
+      "cidr_blocks": [
+        "0.0.0.0/0"
+      ],
+      "description": "SSH access"
+    }
+  ],
+  "vpc_id": "vpc-00535ad5288838822",
+  "project_name": "terraform-lab3-prod",
+  "owner": "ahmed ekram"
+}
